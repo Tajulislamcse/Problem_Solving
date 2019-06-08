@@ -26,5 +26,5 @@ else {
  fprintf(STDOUT,"%s\n",$text1);
 
 }
- $count=0;
+ //$count=0;
 }
