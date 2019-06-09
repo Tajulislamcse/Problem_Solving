@@ -18,7 +18,7 @@ for($i=0;$i<$number;$i++)
 
 {
     //for($j=0;$j<$number-1;$j++)
-    for($j=0;$j<$number;$j++)
+    for($j=0;$j<$number-1;$j++)
        {
         // if($items[$j]>$items[$j+1])
         if($items[$i]<$items[$j])
