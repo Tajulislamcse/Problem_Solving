@@ -3,7 +3,9 @@
 
 $stdin = fopen('php://stdin', 'r');
 $stdout = fopen('php://stdout', 'w');
-
+fscanf(STDIN,"%d",$tc);
+while($tc--)
+{
 fscanf(STDIN,"%s\n",$str1); // take input first string
 
  $len1=strlen($str1);     //  find first string length
@@ -20,12 +22,30 @@ fscanf(STDIN,"%s\n",$str2); // take input seccond string
 // according to first string size.
 if($len1>$len2)
 {
-    $temp=$len1;
-    $len1=$len2;
-    $len2=$temp;
+    $temp=$str1;
+    $str1=$str2;
+    $str2=$temp;
 }
-//echo "length1:".$len1."\n";
-//echo "\n";
-//echo "length2:".$len2."\n";
+// বিস্তারিত reusuability code  এর মধ্যে different_length_string_two_string.php file এ বর্ণনা করা আছে।
+$count=0;
 
+for($i=0;$i<strlen($str1);$i++)
+{
+ for($j=0;$j<strlen($str2);$j++)
+ {
+   if($str1[$i]==$str2[$j])
+      {
+        $count++;
+        echo "$str1[$i] :".$count."\n";
+        
+        
+        break; 
+
+      }
+      echo $count."\n";
+  }
+  
+  //echo "tajul"."\n";
+}
+}
 
