@@ -27,6 +27,7 @@ while ($tc--)
     	{
 
           $newStr=substr($hash,$i,$lenP);
+          
           if(CharOccurOfStrH($newStr)==CharOccurOfStrP($password))
           {
           	$flag=1;

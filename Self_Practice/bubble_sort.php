@@ -18,12 +18,15 @@ for($i=0;$i<$number;$i++)
 
 {
     //for($j=0;$j<$number-1;$j++)
-    for($j=0;$j<$number-1;$j++)
+    for($j=0;$j<$number;$j++)
        {
         // if($items[$j]>$items[$j+1])
-        if($items[$i]<$items[$j])
+        echo"$items[$i]<$items[$j]\n";
 
-         {
+        if($items[$i]<$items[$j])
+           {
+            //echo $items[$i]<$items[$j]."\n";
+
            //$items[$j]=$items[$j]+$items[$j+1];
 
            $items[$i]=$items[$i]+$items[$j];
