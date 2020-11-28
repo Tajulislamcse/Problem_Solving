@@ -1,42 +1,34 @@
 <?php
 fscanf(STDIN,"%d",$k);
 $str=trim(fgets(STDIN));
-$len=strlen($str);
-if($len<$k)
-	echo "NO";
-elseif ($k==1)
- {
-	echo "YES\n";
-	echo "$str";
- }
- else
- {
-	 	//$cnt=0;
-	    $str1=array();
-	    $start=array();
-	    $str1[0]=$str[0];
-	    $j=1;
-	    $start[0]=0;
-	 	for ($i=1; $i <=$len-1 ; $i++)
-	 	{     // echo $str1[$i-1]."\n";
-	 			//$str1[++$j]=$str[$i];
-	            $occrCnt=0;
-	 		for ($p=0; $p <count($str1) ; $p++)
-	 		 { 
-	 		    if($str1[$p]!=$str[$i])
-	 		    	$occrCnt++;
-	 		    if($occrCnt==count($str1))
-	 		    {
-	 		    	$start[$j++]=$i;
-	 		    	//echo "$start\n";
-
-	 		    	//$str1[$j++]=substr($str,);
-	 		    }
-	 			
-	 		 }
-	           
-	 	}
-	 	
-	 	print_r($start);
-	 	
- }
+$split=str_split($str);
+$unqChr=implode(array_unique($split));
+echo "unqChr=$unqChr";
+if(strlen($unqChr)<$k)
+	echo "NO\n";
+elseif($k==1)
+	echo "YES\n$str";
+else
+{
+		echo "YES\n";
+		$str2="";
+	    $len=strlen($str);
+	   for ($i=0,$j=1; $i <$len ; $i++) 
+		{ 
+		
+			if($str[$i]==$unqChr[$j])
+			{
+		          echo $str2."\n";
+		          $k--;
+		          if($k==1)
+		          {
+		          	echo substr($str,$i);
+		          	break;
+		          }
+		          $j++; 
+		          $str2="";  
+			}
+			$str2.=$str[$i];
+		}
+	
+}
