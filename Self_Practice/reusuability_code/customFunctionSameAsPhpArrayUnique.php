@@ -15,7 +15,7 @@ function distinctChar($str)
 					$cnt++;
 					if($cnt==strlen($distChar))
 					{
-	                   $distChar.=$str[$i];
+	                                   $distChar.=$str[$i];
 					}
 				}
 			 }
