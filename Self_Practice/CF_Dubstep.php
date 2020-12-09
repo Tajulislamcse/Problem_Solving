@@ -1,0 +1,23 @@
+<?php
+    fscanf(STDIN,"%s",$s);
+    $len=strlen($s);
+    $i;
+    $bb=true;
+    for($i=0;$i<$len;)
+    {
+        if($i<$len-2&&
+            $s[$i]=="W"&&
+            $s[$i+1]=="U"&&
+            $s[$i+2]=="B")
+        {
+            $i+=3;          
+            if($bb==false)echo(" ");
+            $bb=true;
+        }
+        else
+        {
+            $bb=false;
+            echo($s[$i]);
+            $i++;
+        }
+    }

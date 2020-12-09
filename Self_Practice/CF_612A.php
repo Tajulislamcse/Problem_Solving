@@ -1,18 +1,39 @@
 <?php
 fscanf(STDIN,"%d %d %d",$n,$p,$q);
-$str=trim(readline());
-if($p>$q)
+fscanf(STDIN,"%s",$str);
+$ans=false;
+for ($i=0; $i <=$n ; $i++) 
+ { 
+	for ($j=0; $j <=$n ; $j++)
+	 { 
+		if($p*$i+$q*$j==$n)
+		{
+           $ans=true;
+           break;
+		}
+	 }
+  if($ans)
+  	break;
+ }
+if($ans)
 {
-	$tmp=$q;
-	$q=$p;
-	$p=$tmp;
+	       echo $i+$j."\n";
+             $start=0;
+			while($i--)
+			{
+				echo substr($str,$start,$p)."\n";
+				$start+=$p;
+
+			}
+			while($j--)
+			{
+				echo substr($str,$start,$q)."\n";
+				$start+=$q;
+
+			}
+		
+	
 }
-$i=0;
-while(true)
-{
-   $str1=substr($str,$i,$p);
-   echo "$str1\n";
-   if($i>$n)
-   	break;
-   $i+=$p;
-}
+else
+  echo "-1";
+  
