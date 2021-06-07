@@ -2,6 +2,7 @@
 fscanf(STDIN,"%d",$tc);
 while ($tc--)
 {
+
 	
 	$str=trim(fgets(STDIN));
 	$asciValue=array();

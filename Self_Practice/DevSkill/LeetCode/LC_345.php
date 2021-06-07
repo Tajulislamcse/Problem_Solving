@@ -1,0 +1,32 @@
+<?php
+fscanf(STDIN,"%s",$s);
+$left=0;
+$right=strlen($s)-1;
+$vowel="AEIOUaeiou";
+while($left<$right)
+{   $flag1=0;
+   if(substr_count($vowel,$s[$left])==1)
+   {
+   	  $s[$left];
+   	  $flag1=1;
+   }
+   	else
+   		$left++;
+   $flag2=0;
+   if(substr_count($vowel,$s[$right])==1)
+   {
+   	$flag2=1;
+   	  $s[$right];
+   }
+   	else
+   		$right--;
+   	if($flag1==1&&$flag2==1)
+   	{
+   		$tmp=$s[$left];
+   		$s[$left]=$s[$right];
+   		$s[$right]=$tmp;
+   		$left++;
+   		$right--;
+   	}
+}
+echo $s;
